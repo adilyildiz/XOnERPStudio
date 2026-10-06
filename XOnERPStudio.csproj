@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>XOnERPStudio</AssemblyName>
+    <RootNamespace>XOnERPStudio</RootNamespace>
+    <!-- lsl.dll yalnızca x64 derlemesidir -->
+    <PlatformTarget>x64</PlatformTarget>
+    <Version>1.0.0</Version>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <!-- x64 .NET 8 Desktop runtime yoksa yüklü daha yeni sürümde (9/10) çalışsın -->
+    <RollForward>Major</RollForward>
+    <!-- LSL.cs (resmi liblsl C# sarmalayıcısı) içindeki küçük harfli 'dll' sınıfı -->
+    <NoWarn>$(NoWarn);CS8981</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="lib\lsl.dll">
+      <LogicalName>lsl.dll</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>
