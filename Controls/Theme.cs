@@ -25,6 +25,20 @@ public static class Theme
     public static readonly Color Fair = Color.FromArgb(241, 196, 15);
     public static readonly Color Poor = Color.FromArgb(231, 76, 60);
 
+    private static Icon _appIcon;
+
+    /// <summary>Gömülü app.ico'dan yüklenen uygulama simgesi (pencere başlıkları için).</summary>
+    public static Icon AppIcon
+    {
+        get
+        {
+            if (_appIcon != null) return _appIcon;
+            using var s = typeof(Theme).Assembly.GetManifestResourceStream("app.ico");
+            if (s != null) _appIcon = new Icon(s);
+            return _appIcon;
+        }
+    }
+
     public static Font UiFont(float size = 9f, FontStyle style = FontStyle.Regular) => new("Segoe UI", size, style);
 
     public static GraphicsPath RoundedRect(RectangleF r, float radius)

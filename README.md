@@ -11,6 +11,14 @@ dotnet run
 - Hedef çatı `net8.0-windows` (x64). `RollForward=Major` ayarlı olduğu için x64 .NET 8 Desktop Runtime yoksa yüklü .NET 9/10 ile de çalışır.
 - `lsl.dll` (liblsl 1.17.7, x64) derlemeye gömülüdür. İlk açılışta `%LOCALAPPDATA%\XOnERPStudio\native\` altına çıkarılır.
 
+## Tek dosya exe paketleme
+
+```bash
+dotnet publish -p:PublishProfile=SingleExe
+```
+
+Çıktı `publish\XOnERPStudio.exe` dosyasıdır (~69 MB, win-x64). .NET çalışma zamanı ve `lsl.dll` içine gömülüdür. Hedef bilgisayarda kurulum gerekmez, exe tek başına kopyalanıp çalıştırılabilir. Profil ayarları: [Properties/PublishProfiles/SingleExe.pubxml](Properties/PublishProfiles/SingleExe.pubxml).
+
 ## Veri kaynakları
 
 | Kaynak | Açıklama |

@@ -11,6 +11,8 @@
     <!-- lsl.dll yalnızca x64 derlemesidir -->
     <PlatformTarget>x64</PlatformTarget>
     <Version>1.0.0</Version>
+    <!-- Exe simgesi (Explorer, görev çubuğu) -->
+    <ApplicationIcon>app.ico</ApplicationIcon>
     <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
     <!-- x64 .NET 8 Desktop runtime yoksa yüklü daha yeni sürümde (9/10) çalışsın -->
     <RollForward>Major</RollForward>
@@ -21,6 +23,10 @@
   <ItemGroup>
     <EmbeddedResource Include="lib\lsl.dll">
       <LogicalName>lsl.dll</LogicalName>
+    </EmbeddedResource>
+    <!-- Pencere başlık çubuğu simgesi -->
+    <EmbeddedResource Include="app.ico">
+      <LogicalName>app.ico</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 

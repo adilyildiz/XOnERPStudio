@@ -23,6 +23,7 @@ public class FilterSettingsForm : Form
         BackColor = Theme.Background;
         ForeColor = Theme.Text;
         Font = Theme.UiFont(9f);
+        Icon = Theme.AppIcon;
         ShowInTaskbar = false;
         MinimizeBox = false;
 

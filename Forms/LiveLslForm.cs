@@ -41,6 +41,7 @@ public class LiveLslForm : Form
         MinimumSize = new Size(960, 600);
         BackColor = Theme.Background;
         ForeColor = Theme.Text;
+        Icon = Theme.AppIcon;
         Font = Theme.UiFont(9f);
 
         BuildUi();
